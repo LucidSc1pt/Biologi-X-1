@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Presentasi Biologi Kelompok</title>
+<style>
+    /* ===== VARIABEL WARNA CANVA-STYLE (SKY BLUE LIGHT MODE) ===== */
+    :root {
+        --bg-gradient: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%);
+        --accent-sky: #0284c7;
+        --accent-cyan: #0891b2;
+        --accent-blue: #2563eb;
+        --card-bg: rgba(255, 255, 255, 0.8);
+        --card-border: rgba(56, 189, 248, 0.3);
+        --text-main: #0f172a;
+        --text-sub: #334155;
+        --font-main: 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background: var(--bg-gradient);
+        background-attachment: fixed;
+        color: var(--text-main);
+        font-family: var(--font-main);
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+
+    /* ===== NAVBAR LIGHT MODE ===== */
+    nav {
+        position: fixed;
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 1200px;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.8rem 2rem;
+        z-index: 1000;
+        border-radius: 50px;
+        border: 1px solid var(--card-border);
+        box-shadow: 0 10px 25px rgba(14, 165, 233, 0.12);
+    }
+
+    .logo {
+        font-weight: 800;
+        font-size: 1.1rem;
+        background: linear-gradient(90deg, var(--accent-sky), var(--accent-blue));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: 1px;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 1.5rem;
+        list-style: none;
+    }
+
+    .nav-links a {
+        color: var(--text-sub);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: var(--accent-sky);
+    }
+
+    /* ===== LAYOUT SLIDE PRESENTASI ===== */
+    .slide {
+        min-height: 100vh;
+        padding: 8rem 8% 5rem 8%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+    }
+
+    .slide-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        background: linear-gradient(90deg, #0369a1 0%, var(--accent-blue) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 2rem;
+        display: inline-block;
+    }
+
+    /* ===== GRID DUA KOLOM ===== */
+    .grid-2col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+        align-items: center;
+    }
+
+    .text-content p {
+        margin-bottom: 1.2rem;
+        color: var(--text-sub);
+        font-size: 1.05rem;
+        font-weight: 500;
+    }
+
+    .img-container {
+        width: 100%;
+        height: 340px;
+        border-radius: 24px;
+        overflow: hidden;
+        border: 2px solid #ffffff;
+        box-shadow: 0 15px 35px rgba(14, 165, 233, 0.18);
+        position: relative;
+    }
+
+    .img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .img-container:hover img {
+        transform: scale(1.08);
+    }
+
+    /* ===== COVER / HERO ===== */
+    #cover {
+        text-align: center;
+        align-items: center;
+    }
+
+    #cover h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+        background: linear-gradient(135deg, #0369a1 0%, var(--accent-sky) 50%, var(--accent-blue) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    #cover p.sub-title {
+        font-size: 1.6rem;
+        color: var(--text-sub);
+        font-weight: 600;
+        margin-bottom: 2.5rem;
+    }
+
+    /* ===== KARTU ANGGOTA & INFORMASI ===== */
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1.5rem;
+        width: 100%;
+        max-width: 950px;
+    }
+
+    .member-card {
+        background: var(--card-bg);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid var(--card-border);
+        padding: 1.5rem 1rem;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(14, 165, 233, 0.08);
+        transition: all 0.3s ease;
+    }
+
+    .member-card:hover {
+        transform: translateY(-8px);
+        background: #ffffff;
+        border-color: var(--accent-sky);
+        box-shadow: 0 15px 30px rgba(14, 165, 233, 0.2);
+    }
+
+    .member-card h4 {
+        color: var(--text-main);
+        font-size: 1.05rem;
+        font-weight: 700;
+    }
+
+    .member-card p {
+        color: var(--accent-sky);
+        font-size: 0.85rem;
+        font-weight: 700;
+        margin-top: 0.3rem;
+    }
+
+    .grid-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .info-card {
+        background: var(--card-bg);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid var(--card-border);
+        border-radius: 20px;
+        padding: 1.8rem;
+        box-shadow: 0 10px 25px rgba(14, 165, 233, 0.08);
+        transition: all 0.3s ease;
+    }
+
+    .info-card:hover {
+        transform: translateY(-5px);
+        background: #ffffff;
+        border-color: var(--accent-blue);
+        box-shadow: 0 15px 30px rgba(37, 99, 235, 0.15);
+    }
+
+    .info-card h3 {
+        color: var(--accent-sky);
+        margin-bottom: 0.8rem;
+    }
+
+/* ===== CONTAINER & STYLING AWAN RANDOM ===== */
+#cloud-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.custom-cloud {
+    position: absolute;
+    will-change: transform;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    filter: drop-shadow(0 8px 12px rgba(255, 255, 255, 0.4));
+}
+
+/* Animasi Ke Kanan */
+@keyframes moveRight {
+    from { transform: translateX(-300px); }
+    to { transform: translateX(100vw); }
+}
+
+/* Animasi Ke Kiri */
+@keyframes moveLeft {
+    from { transform: translateX(100vw); }
+    to { transform: translateX(-300px); }
+}
+    
+    /* ===== ANIMASI SLIDE & TEXT EFFECT BASE ===== */
+    [data-animate] {
+        opacity: 0;
+        transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+                    transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+                    filter 0.8s ease;
+        will-change: transform, opacity;
+    }
+
+    [data-animate="fade-up"] { transform: translateY(40px); }
+    [data-animate="slide-right"] { transform: translateX(-60px); }
+    [data-animate="slide-left"] { transform: translateX(60px); }
+    [data-animate="slide-down"] { transform: translateY(-60px); }
+    [data-animate="zoom-in"] { transform: scale(0.85); }
+    [data-animate="blur-in"] { filter: blur(12px); transform: translateY(20px); }
+    [data-animate="rotate"] { transform: rotate(-8deg) scale(0.85); }
+
+    [data-animate].is-visible {
+        opacity: 1;
+        transform: translate(0) scale(1) rotate(0deg);
+        filter: blur(0);
+    }
+
+    /* ANIMASI GRADIENT WARNA TEKS BERJALAN */
+    @keyframes colorCycle {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    [data-text-effect="color-cycle"] {
+        background: linear-gradient(90deg, #0284c7, #2563eb, #7c3aed, #0891b2, #0284c7);
+        background-size: 300% 300%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: colorCycle 4s ease infinite;
+        display: inline-block;
+    }
+
+    .typing-cursor::after {
+        content: '|';
+        animation: blinkCursor 0.7s infinite;
+        color: var(--accent-sky);
+        margin-left: 2px;
+    }
+
+    @keyframes blinkCursor {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 868px) {
+        nav { width: 95%; padding: 0.8rem 1.2rem; }
+        .grid-2col { grid-template-columns: 1fr; }
+        #cover h1 { font-size: 2.3rem; }
+        .slide-title { font-size: 1.8rem; }
+        .img-container { height: 250px; }
+        .nav-links { display: none; }
+    }
+</style>
+
+</head>
+<body>
+
+    <div id="cloud-container"></div>
+
+    <nav>
+        <div class="logo">BIOLOGI X-1</div>
+        <ul class="nav-links">
+            <li><a href="#cover">Awal</a></li>
+            <li><a href="#pendahuluan">Pendahuluan</a></li>
+            <li><a href="#pembahasan">Pembahasan</a></li>
+            <li><a href="#hasil">Hasil & Data</a></li>
+            <li><a href="#kesimpulan">Kesimpulan</a></li>
+        </ul>
+    </nav>
+    
+    <section class="slide" id="cover">
+        <h1 style="color: var(--accent); letter-spacing: 2px; font-size: 2.6rem;" data-animate="blur-in">PRESENTASI KELOMPOK BIOLOGI</h1>
+        <h1></h1>
+        <p data-text-effect="type" class="sub-title">Pembagian Wilayah Flora dan Fauna Indonesia</p>
+
+        <h3 data-text-effect="color-cycle" style="margin-bottom: 1rem; font-size: 1rem;">Anggota Kelompok:</h3>
+        <div class="team-grid">
+            <div class="member-card" data-delay="1s">
+                <h4>[Nama Anggota 1]</h4>
+                <p>No. Absen 01</p>
+            </div>
+            <div class="member-card" data-delay="1.2s">
+                <h4>[Nama Anggota 2]</h4>
+                <p>No. Absen 02</p>
+            </div>
+            <div class="member-card" data-delay="1.4s">
+                <h4>[Nama Anggota 3]</h4>
+                <p>No. Absen 03</p>
+            </div>
+            <div class="member-card" data-delay="1.6s">
+                <h4>[Nama Anggota 4]</h4>
+                <p>No. Absen 04</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide" id="pendahuluan">
+        <h2 class="slide-title">01. Latar Belakang & Latar Masalah</h2>
+        <div class="grid-2col">
+            <div class="text-content">
+                <p>[Tuliskan pengantar materi atau latar belakang praktikum/penelitian biologi kelompok kamu di sini].</p>
+                <p>[Penjelasan tambahan tentang tujuan materi ini dibahas secara detail agar audiens paham dasar teorinya].</p>
+            </div>
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800&auto=format&fit=crop" alt="Gambar Sel Biologi">
+            </div>
+        </div>
+    </section>
+
+    <section class="slide" id="pembahasan">
+        <h2 class="slide-title">02. Pembahasan & Struktur Utama</h2>
+        <div class="grid-2col" style="margin-bottom: 2rem;">
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=800&auto=format&fit=crop" alt="Praktikum Biologi">
+            </div>
+            <div class="text-content">
+                <p>[Penjelasan detail mengenai proses biologi, organel sel, sistem organ, atau hasil pengamatan mikroskop].</p>
+                <p>[Bisa dimasukkan poin-poin penting yang ingin dijelaskan juru bicara kelompok saat presentasi].</p>
+            </div>
+        </div>
+
+        <div class="text-content">
+                <p>[Penjelasan detail mengenai proses biologi, organel sel, sistem organ, atau hasil pengamatan mikroskop].</p>
+                <p>[Bisa dimasukkan poin-poin penting yang ingin dijelaskan juru bicara kelompok saat presentasi].</p>
+        </div>
+
+        <div class="grid-cards">
+            <div class="info-card">
+                <h3>Point A: [Fungsi / Bagian 1]</h3>
+                <p>[Keterangan singkat poin A].</p>
+            </div>
+            <div class="info-card">
+                <h3>Point B: [Fungsi / Bagian 2]</h3>
+                <p>[Keterangan singkat poin B].</p>
+            </div>
+            <div class="info-card">
+                <h3>Point C: [Fungsi / Bagian 3]</h3>
+                <p>[Keterangan singkat poin C].</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide" id="hasil">
+        <h2 class="slide-title">03. Hasil Pengamatan</h2>
+        <div class="grid-2col">
+            <div class="text-content">
+                <p><strong>Hasil Praktikum / Diskusi:</strong></p>
+                <p>[Isikan hasil akhir dari tugas biologi kelompokmu, misalnya variabel bebas, terikat, atau tabel observasi].</p>
+            </div>
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?w=800&auto=format&fit=crop" alt="Hasil Pengamatan">
+            </div>
+        </div>
+    </section>
+
+    <section class="slide" id="kesimpulan" style="text-align: center; align-items: center;">
+        <h2 class="slide-title" style="margin-bottom: 1.5rem;">Kesimpulan</h2>
+        <p style="max-width: 700px; font-size: 1.1rem; margin-bottom: 2rem;">
+            "[Tuliskan rangkuman/kesimpulan akhir dari presentasi tugas kelompok biologi kalian di sini]."
+        </p>
+        <div style="background: var(--card-bg); padding: 1.5rem 3rem; border-radius: 50px; border: 1px solid var(--accent);">
+            <h3 style="color: var(--accent);">Sekian & Terima Kasih!</h3>
+            <p style="font-size: 0.9rem; color: var(--text-dim);">Ada Pertanyaan?</p>
+        </div>
+    </section>
+
+    <div style="background: #005caac2; padding: 1.5rem 1.5rem;">
+        <img src="FileGambar/20251121_191902.png" alt="Logo" style="width: 80px;">
+        <p style="color: #ffffff">&copy LucidSc1pt or Aditya Fathan • 2026</p>
+        <a href="https://github.com/LucidSc1pt" target="_blank" style="color: #ffffff">Github Pages</a>
+    </div>
+    
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('cloud-container');
+    if (!container) return;
+
+    // 3 Bentuk Awan SVG Berbeda (Vektor transparan tanpa perlu download file foto)
+    const cloudShapes = [
+        `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="white"><path d="M400 192c-6.1 0-12 0.8-17.8 2.2C365 142.8 315.6 112 256 112c-67 0-122.9 39.4-147.8 96.8C102.3 205.8 96.2 205 90 205c-49.7 0-90 40.3-90 90s40.3 90 90 90h310c53 0 96-43 96-96s-43-96-96-96z"/></svg>`,
+        `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="white"><path d="M464 256c0-53-43-96-96-96-12 0-23.6 2.2-34.3 6.3C315.2 116.5 268.4 80 212 80c-66.3 0-120 53.7-120 120 0 5.4 0.4 10.7 1.1 15.9C41.7 227.1 0 271.7 0 326c0 58.5 47.5 106 106 106h342c35.3 0 64-28.7 64-64 0-48.6-35.1-89-84-102c0-1.3 0-2.7 0-4z"/></svg>`,
+        `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="white"><path d="M416 224c0-44.2-35.8-80-80-80-10.8 0-21.1 2.1-30.6 6-18.7-41.2-60.2-70-109.4-70-66.3 0-120 53.7-120 120 0 3.7 0.2 7.3 0.5 10.9C31.5 220 0 258 0 304c0 61.9 50.1 112 112 112h288c61.9 0 112-50.1 112-112 0-51.4-34.7-94.7-82-108 0-6.7 0-13.3 0-20z"/></svg>`
+    ];
+
+    const totalClouds = 5; // Jumlah total awan di latar belakang
+
+    // Hanya beri animasi otomatis jika kamu BELUM memasang data-animate manual di HTML
+    document.querySelectorAll('.slide-title').forEach(el => {
+        if (!el.hasAttribute('data-animate')) el.setAttribute('data-animate', 'fade-up');
+    });
+    document.querySelectorAll('.text-content').forEach(el => {
+        if (!el.hasAttribute('data-animate')) el.setAttribute('data-animate', 'slide-right');
+    });
+    document.querySelectorAll('.img-container').forEach(el => {
+        if (!el.hasAttribute('data-animate')) el.setAttribute('data-animate', 'slide-left');
+    });
+    document.querySelectorAll('.member-card, .info-card').forEach((el, index) => {
+        if (!el.hasAttribute('data-animate')) el.setAttribute('data-animate', 'zoom-in');
+        el.style.transitionDelay = `${(index % 4) * 0.15}s`;
+    });
+
+    for (let i = 0; i < totalClouds; i++) {
+        const img = document.createElement('img');
+        img.className = 'custom-cloud';
+
+        // 1. Acak bentuk awan dari daftar SVG
+        img.src = cloudShapes[Math.floor(Math.random() * cloudShapes.length)];
+
+        // 2. Acak ukuran lebar (120px - 280px)
+        const width = Math.floor(Math.random() * 160) + 120;
+        img.style.width = `${width}px`;
+
+        // 3. Acak posisi vertikal/tinggi (5% - 80% layar)
+        const topPos = Math.floor(Math.random() * 75) + 5;
+        img.style.top = `${topPos}%`;
+
+        // 4. Acak keburaman/transparansi (0.3 - 0.75) agar ada awan tebal & samar
+        img.style.opacity = (Math.random() * 0.45 + 0.3).toFixed(2);
+
+        // 5. Acak arah gerakan (80% bergerak ke kanan, 20% bergerak ke kiri)
+        const moveRight = Math.random() > 0.2;
+        img.style.animationName = moveRight ? 'moveRight' : 'moveLeft';
+
+        // 6. Acak durasi kecepatan (20 sampai 50 detik)
+        const duration = Math.floor(Math.random() * 30) + 20;
+        img.style.animationDuration = `${duration}s`;
+
+        // 7. Acak delay minus agar saat web dibuka, awan langsung tersebar (tidak mulai dari nol)
+        const initialDelay = -(Math.random() * duration).toFixed(1);
+        img.style.animationDelay = `${initialDelay}s`;
+
+        container.appendChild(img);
+    }
+
+    // === 1. FUNGSI EFEK MENGETIK ===
+    function playTypingEffect(el) {
+        const fullText = el.innerText;
+        el.innerText = '';
+        el.classList.add('typing-cursor');
+        
+        const speed = parseInt(el.getAttribute('data-type-speed')) || 50; // default 50ms per karakter
+        let i = 0;
+
+        function typeChar() {
+            if (i < fullText.length) {
+                el.innerText += fullText.charAt(i);
+                i++;
+                setTimeout(typeChar, speed);
+            }
+        }
+        typeChar();
+    }
+
+    // === 2. FUNGSI EFEK FONT BERGANTI ===
+    function playFontSwapEffect(el) {
+        // Daftar font yang akan berganti-ganti secara otomatis
+        const fonts = ['Segoe UI', 'Courier New', 'Georgia', 'Impact', 'Trebuchet MS', 'Comic Sans MS', 'Verdana'];
+        const speed = parseInt(el.getAttribute('data-font-speed')) || 600; // default ganti tiap 600ms
+        let index = 0;
+
+        setInterval(() => {
+            el.style.fontFamily = fonts[index];
+            index = (index + 1) % fonts.length;
+        }, speed);
+    }
+
+    // === 3. OBSERVER UNTUK MENJALANKAN EFEK SAAT DI-SCROLL ===
+    const textObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const effect = el.getAttribute('data-text-effect');
+
+                if (effect === 'type') playTypingEffect(el);
+                if (effect === 'font-swap') playFontSwapEffect(el);
+                
+
+                // Hentikan observer untuk mengetik agar tidak terulang
+                if (effect === 'type') observer.unobserve(el);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    // Observer untuk menjalankan animasi saat di-scroll
+    const animationObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.35 });
+
+    document.querySelectorAll('[data-animate]').forEach((el, index) => {
+        // Atur delay kustom (jika tidak ada data-delay, pakai stagger default untuk kartu)
+        if (el.hasAttribute('data-delay')) {
+            el.style.transitionDelay = el.getAttribute('data-delay');
+        } else if (el.classList.contains('member-card') || el.classList.contains('info-card')) {
+            el.style.transitionDelay = `${(index % 4) * 0.15}s`;
+        }
+
+        // Atur durasi kustom
+        if (el.hasAttribute('data-duration')) {
+            el.style.transitionDuration = el.getAttribute('data-duration');
+        }
+
+        animationObserver.observe(el);
+    });
+});
+</script>
+</body>
+</html>
