@@ -73,7 +73,7 @@
     .nav-links a {
         color: var(--text-sub);
         text-decoration: none;
-        font-size: 0.9rem;
+        font-size: 1.4rem;
         font-weight: 600;
         transition: all 0.3s ease;
     }
@@ -113,7 +113,7 @@
     .text-content p {
         margin-bottom: 1.6rem;
         color: var(--text-sub);
-        font-size: 1.05rem;
+        font-size: 1.65rem;
         font-weight: 500;
     }
 
@@ -190,13 +190,13 @@
 
     .member-card h4 {
         color: var(--text-main);
-        font-size: 2.05rem;
+        font-size: 1.35rem;
         font-weight: 700;
     }
 
     .member-card p {
         color: var(--accent-sky);
-        font-size: 1.85rem;
+        font-size: 1.25rem;
         font-weight: 700;
         margin-top: 0.3rem;
     }
@@ -347,19 +347,19 @@
 
         <h3 data-text-effect="color-cycle" style="margin-bottom: 1rem; font-size: 1.8rem;">Anggota Kelompok:</h3>
         <div class="team-grid">
-            <div class="member-card" data-delay="1s">
-                <h4>[Nama Anggota 1]</h4>
+            <div class="member-card" data-delay="0.1s">
+                <h4>Aditya Fathan Razlin Faza Akhdan</h4>
                 <p>No. Absen 01</p>
             </div>
-            <div class="member-card" data-delay="1.2s">
+            <div class="member-card" data-delay="0.2s">
                 <h4>[Nama Anggota 2]</h4>
                 <p>No. Absen 02</p>
             </div>
-            <div class="member-card" data-delay="1.4s">
+            <div class="member-card" data-delay="0.3s">
                 <h4>[Nama Anggota 3]</h4>
                 <p>No. Absen 03</p>
             </div>
-            <div class="member-card" data-delay="1.6s">
+            <div class="member-card" data-delay="0.4s">
                 <h4>[Nama Anggota 4]</h4>
                 <p>No. Absen 04</p>
             </div>
@@ -439,7 +439,8 @@
     <div style="background: #005caac2; padding: 1.5rem 1.5rem;">
         <img src="Image/myPersonalLogo.png" alt="Logo" style="width: 80px;">
         <p style="color: #ffffff">&copy LucidSc1pt or Aditya Fathan • 2026</p>
-        <a href="https://github.com/LucidSc1pt" target="_blank" style="color: #ffffff">Github Pages</a>
+        <p style="color: #ffffff">Ailsa</p>
+        <a href="https://github.com/LucidSc1pt" target="_blank" style="color: #ffffff">LucidSc1pt Github Pages</a>
     </div>
     
 <script>
@@ -554,11 +555,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.3 });
 
     // Observer untuk menjalankan animasi saat di-scroll
-    const animationObserver = new IntersectionObserver((entries, observer) => {
+    const animationObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                // Saat masuk layar: jalankan animasi
                 entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target);
+            } else {
+                // Saat keluar dari layar: reset animasi agar bisa main lagi
+                entry.target.classList.remove('is-visible');
             }
         });
     }, { threshold: 0.35 });
