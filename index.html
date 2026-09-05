@@ -108,18 +108,19 @@
         grid-template-columns: 1fr 1fr;
         gap: 2.5rem;
         align-items: center;
+        align-content: center;
     }
 
     .text-content p {
         margin-bottom: 1.6rem;
         color: var(--text-sub);
-        font-size: 1.65rem;
+        font-size: 1.85rem;
         font-weight: 500;
     }
 
     .img-container {
         width: 100%;
-        max-height: 480px;
+        max-height: 440px;
         border-radius: 24px;
         overflow: hidden;
         border: 2px solid #ffffff;
@@ -191,7 +192,7 @@
 
     .member-card h4 {
         color: var(--text-main);
-        font-size: 1.35rem;
+        font-size: 1.55rem;
         font-weight: 700;
     }
 
@@ -227,7 +228,7 @@
         box-shadow: 0 15px 30px rgba(37, 99, 235, 0.15);
     }
 
-    .info-card h3 {
+    .info-card h2 {
         color: var(--accent-sky);
         margin-bottom: 0.8rem;
     }
@@ -249,7 +250,7 @@
     will-change: transform;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    filter: drop-shadow(0 8px 12px rgba(255, 255, 255, 0.4));
+    filter: drop-shadow(0 8px 12px rgba(25, 25, 25, 0.18));
 }
 
 /* Animasi Ke Kanan */
@@ -335,10 +336,10 @@
         <div class="logo">BIOLOGI X-1</div>
         <ul class="nav-links">
             <li><a href="#cover">Awal</a></li>
-            <li><a href="#pendahuluan">Pendahuluan</a></li>
-            <li><a href="#pembahasan">Pembahasan</a></li>
-            <li><a href="#hasil">Hasil & Data</a></li>
-            <li><a href="#kesimpulan">Kesimpulan</a></li>
+            <li><a href="#pendahuluan">Pertanyaan 1</a></li>
+            <li><a href="#pembahasan">Pertanyaan 2</a></li>
+            <li><a href="#hasil">Pertanyaan 3</a></li>
+            <li><a href="#kesimpulan">Thank You</a></li>
         </ul>
     </nav>
     
@@ -389,75 +390,100 @@
     </section>
 
     <section class="slide" id="pendahuluan">
-        <h2 class="slide-title">01. Latar Belakang & Latar Masalah</h2>
         <div class="grid-2col">
-            <div class="img-container">
-                <img src="Image/fauna.jpg" alt="Gambar Fauna">
+        <div class="img-container">
+        <img src="Image/fauna.jpg" alt="Gambar Fauna">
+        </div>
+        <div class="img-container">
+        <img src="Image/fauna.jpg" alt="Gambar Fauna">
+        </div>
+        </div>
+        <h2 class="slide-title">1. Faktor apa yg mempengaruhi kejadian pembagian wilayah Flora dan Fauna di Indonesia?</h2>
+        <div class="grid-2col">
+            <div class="text-content">
+                <p>- Sejarah Geologi:<br>Pergerakan lempeng benua masa lalu memisahkan Indonesia menjadi tiga wilayah (Asiatis, Peralihan, dan Australis) yang dibatasi Garis Wallace dan Weber.</p>
             </div>
             <div class="text-content">
-                <p>[Tuliskan pengantar materi atau latar belakang praktikum/penelitian biologi kelompok kamu di sini].</p>
-                <p>[Penjelasan tambahan tentang tujuan materi ini dibahas secara detail agar audiens paham dasar teorinya].</p>
+                <p>- Iklim (Klimatik):<br>Perbedaan curah hujan, suhu, dan kelembapan udara menentukan jenis ekosistem yang terbentuk.</p>
+            </div>
+            <div class="text-content">
+                <p>- Kondisi Tanah (Edafik):<br>Kesuburan dan kandungan zat hara tanah memengaruhi jenis tumbuhan yang dapat hidup.</p>
+            </div>
+            <div class="text-content">
+                <p>- Topografi (Fisiografis):<br>Ketinggian tempat memengaruhi suhu udara, sehingga flora dan fauna di dataran rendah berbeda dengan di pegunungan.</p>
             </div>
         </div>
     </section>
 
     <section class="slide" id="pembahasan">
-        <h2 class="slide-title">02. Pembahasan & Struktur Utama</h2>
+        <h2 class="slide-title">2. Jelaskan tiga wilayah persebaran Fauna di Indonesia!</h2>
         <div class="grid-2col" style="margin-bottom: 2rem;">
             <div class="text-content">
-                <p>[Penjelasan detail mengenai proses biologi, organel sel, sistem organ, atau hasil pengamatan mikroskop].</p>
-                <p>[Bisa dimasukkan poin-poin penting yang ingin dijelaskan juru bicara kelompok saat presentasi].</p>
+                <p>Persebaran fauna di Indonesia terbagi secara tegas menjadi tiga kelompok yaitu:</p>
             </div>
-        </div>
-
-        <div class="text-content">
-                <p>[Penjelasan detail mengenai proses biologi, organel sel, sistem organ, atau hasil pengamatan mikroskop].</p>
-                <p>[Bisa dimasukkan poin-poin penting yang ingin dijelaskan juru bicara kelompok saat presentasi].</p>
         </div>
 
         <div class="grid-cards">
-            <div class="info-card">
-                <h3>Point A: [Fungsi / Bagian 1]</h3>
-                <p>[Keterangan singkat poin A].</p>
+            <div class="info-card" style="min-height: 255px;" data-delay="0.2s">
+                <h2>Fauna Asiatis (Barat):</h2>
+                <p style="font-size: 1.4rem;">
+                    Memiliki kesamaan dengan fauna di benua Asia. Contohnya adalah mamalia berukuran besar.
+                </p>
             </div>
-            <div class="info-card">
-                <h3>Point B: [Fungsi / Bagian 2]</h3>
-                <p>[Keterangan singkat poin B].</p>
+            <div class="info-card" data-delay="0.3s">
+                <h2>Fauna Peralihan (Tengah):</h2>
+                <p style="font-size: 1.4rem;">
+                    Merupakan wilayah unik yang dihuni oleh hewan endemik asli Indonesia yang tidak ditemukan di Asia maupun Australia.
+                </p>
             </div>
-            <div class="info-card">
-                <h3>Point C: [Fungsi / Bagian 3]</h3>
-                <p>[Keterangan singkat poin C].</p>
+            <div class="info-card" data-delay="0.4s">
+                <h2>Fauna Australis (Timur):</h2>
+                <p style="font-size: 1.4rem;">
+                    Memiliki kemiripan dengan fauna di benua Australia, ditandai dengan banyaknya hewan berkantung dan burung berbulu indah.
+                </p>
             </div>
         </div>
     </section>
 
-    <section class="slide" id="hasil">
-        <h2 class="slide-title">03. Hasil Pengamatan</h2>
-        <div class="grid-2col">
-            <div class="text-content">
-                <p><strong>Hasil Praktikum / Diskusi:</strong></p>
-                <p>[Isikan hasil akhir dari tugas biologi kelompokmu, misalnya variabel bebas, terikat, atau tabel observasi].</p>
+    <section class="slide" id="hasil" style="align-items: center;">
+        <h2 class="slide-title">3. Bagaimana ciri khas Flora dan Fauna yang berada di wilayah bagian barat, bagian tengah, dan bagian timur?</h2>
+        <div class="grid-cards">
+            <div class="info-card" data-delay="0.4s">
+                <h2>1. Wilayah Barat (Asiatis)</h2>
+                <p style="font-size: 1.4rem;">
+                    - Flora: Hutan hujan tropis yang lebat, pohon tinggi besar (meranti, mahoni), dan banyak tanaman merambat (rotan).<br>
+                    - Fauna: Banyak mamalia besar (gajah, badak, harimau) dan berbagai jenis kera (orangutan).
+                </p>
+            </div>
+            <div class="info-card" data-delay="0.4s">
+                <h2>2. Wilayah Tengah (Peralihan)</h2>
+                <p style="font-size: 1.4rem;">
+                    - Flora: Didominasi sabana/padang rumput, hutan musim, dan pohon berkayu keras (cendana, eboni).<br>
+                    - Fauna: Didominasi hewan endemik asli Indonesia (komodo, anoa, babi rusa, burung maleo). 
+                </p>
+            </div>
+            <div class="info-card" data-delay="0.4s">
+                <h2>3. Wilayah Timur (Australis)</h2>
+                <p style="font-size: 1.4rem;">
+                    - Flora: Banyak pohon sagu, hutan eukaliptus, matoa, dan tumbuhan jenis konifer.<<br>
+                    - Fauna: Banyak mamalia kecil, hewan berkantung (kangguru pohon), dan burung berbulu indah (cendrawasih, kasuari)
+                </p>
             </div>
         </div>
     </section>
 
     <section class="slide" id="kesimpulan" style="text-align: center; align-items: center;">
-        <h2 class="slide-title" style="margin-bottom: 1.5rem;">Kesimpulan</h2>
-        <p style="max-width: 700px; font-size: 1.1rem; margin-bottom: 2rem;">
-            "[Tuliskan rangkuman/kesimpulan akhir dari presentasi tugas kelompok biologi kalian di sini]."
-        </p>
         <div style="background: var(--card-bg); padding: 1.5rem 3rem; border-radius: 50px; border: 1px solid var(--accent);">
             <h3 style="color: var(--accent);">Sekian & Terima Kasih!</h3>
             <p style="font-size: 0.9rem; color: var(--text-dim);">Ada Pertanyaan?</p>
         </div>
     </section>
 
-    <div style="background: #005caac2; padding: 1.5rem 1.5rem;">
+    <div style="display: flex; flex-direction: column; position: relative; background: #005caac2; padding: 1.5rem 1.5rem;">
         <img src="Image/myPersonalLogo.png" alt="Logo" style="width: 80px;">
         <p style="color: #ffffff">&copy LucidSc1pt or Aditya Fathan • 2026</p>
         <a href="https://github.com/LucidSc1pt" target="_blank" style="color: #ffffff">LucidSc1pt Github Pages</a>
     </div>
-    
 <script>
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('cloud-container');
@@ -490,7 +516,7 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < totalClouds; i++) {
         const img = document.createElement('img');
         img.className = 'custom-cloud';
-
+        
         // 1. Acak bentuk awan dari daftar SVG
         img.src = cloudShapes[Math.floor(Math.random() * cloudShapes.length)];
 
@@ -567,7 +593,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (effect === 'type') observer.unobserve(el);
             }
         });
-    }, { threshold: 0.3 });
+    }, { threshold: 0.2 });
 
     // Observer untuk menjalankan animasi saat di-scroll
     const animationObserver = new IntersectionObserver((entries) => {
@@ -580,14 +606,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 entry.target.classList.remove('is-visible');
             }
         });
-    }, { threshold: 0.35 });
+    }, { threshold: 0.25 });
 
     document.querySelectorAll('[data-animate]').forEach((el, index) => {
         // Atur delay kustom (jika tidak ada data-delay, pakai stagger default untuk kartu)
         if (el.hasAttribute('data-delay')) {
             el.style.transitionDelay = el.getAttribute('data-delay');
         } else if (el.classList.contains('member-card') || el.classList.contains('info-card')) {
-            el.style.transitionDelay = `${(index % 4) * 0.15}s`;
+            el.style.transitionDelay = `${(index % 5) * 0.15}s`;
+        } else {
+            el.style.transitionDelay = `${(index % 6) * 0.15}s`;
         }
 
         // Atur durasi kustom
