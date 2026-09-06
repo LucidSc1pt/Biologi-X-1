@@ -73,7 +73,7 @@
     .nav-links a {
         color: var(--text-sub);
         text-decoration: none;
-        font-size: 1.4rem;
+        font-size: 1.0rem;
         font-weight: 600;
         transition: all 0.3s ease;
     }
@@ -172,6 +172,7 @@
     }
 
     .member-card {
+        min-height: 140px;
         background: var(--card-bg);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
@@ -335,18 +336,19 @@
     <nav>
         <div class="logo">BIOLOGI X-1</div>
         <ul class="nav-links">
-            <li><a href="#cover">Awal</a></li>
-            <li><a href="#pendahuluan">Pertanyaan 1</a></li>
-            <li><a href="#pembahasan">Pertanyaan 2</a></li>
-            <li><a href="#hasil">Pertanyaan 3</a></li>
-            <li><a href="#kesimpulan">Thank You</a></li>
+            <li><a href="#awal">Awal</a></li>
+            <li><a href="#pertanyaan1">Pertanyaan 1</a></li>
+            <li><a href="#pertanyaan2">Pertanyaan 2</a></li>
+            <li><a href="#pertanyaan3">Pertanyaan 3</a></li>
+            <li><a href="#ThankYou">Thank You</a></li>
+            <li><a href="#credits">Credits</a></li>
         </ul>
     </nav>
     
-    <section class="slide" id="cover" style="text-align: center; align-items: center;">
+    <section class="slide" id="awal" style="text-align: center; align-items: center;">
         <h1 style="color: var(--accent); letter-spacing: 2px; font-size: 2.6rem;" data-animate="blur-in">PRESENTASI KELOMPOK BIOLOGI</h1>
         <h1></h1>
-        <p data-text-effect="type" class="sub-title">Pembagian Wilayah Flora dan Fauna Indonesia</p>
+        <p style="font-weight: 600px; font-size: 30px;">Pembagian Wilayah Flora dan Fauna Indonesia</p>
 
         <h3 data-text-effect="color-cycle" style="margin-bottom: 1rem; font-size: 1.8rem;">Anggota Kelompok:</h3>
         <div class="team-grid">
@@ -389,13 +391,13 @@
         </div>
     </section>
 
-    <section class="slide" id="pendahuluan">
+    <section class="slide" id="pertanyaan1">
         <div class="grid-2col">
         <div class="img-container">
         <img src="Image/fauna.jpg" alt="Gambar Fauna">
         </div>
         <div class="img-container">
-        <img src="Image/fauna.jpg" alt="Gambar Fauna">
+        <img src="Image/fauna.jpg" alt="Gambar Flora">
         </div>
         </div>
         <h2 class="slide-title">1. Faktor apa yg mempengaruhi kejadian pembagian wilayah Flora dan Fauna di Indonesia?</h2>
@@ -415,7 +417,7 @@
         </div>
     </section>
 
-    <section class="slide" id="pembahasan">
+    <section class="slide" id="pertanyaan2">
         <h2 class="slide-title">2. Jelaskan tiga wilayah persebaran Fauna di Indonesia!</h2>
         <div class="grid-2col" style="margin-bottom: 2rem;">
             <div class="text-content">
@@ -445,7 +447,7 @@
         </div>
     </section>
 
-    <section class="slide" id="hasil" style="align-items: center;">
+    <section class="slide" id="pertanyaan3" style="align-items: center;">
         <h2 class="slide-title">3. Bagaimana ciri khas Flora dan Fauna yang berada di wilayah bagian barat, bagian tengah, dan bagian timur?</h2>
         <div class="grid-cards">
             <div class="info-card" data-delay="0.4s">
@@ -455,14 +457,14 @@
                     - Fauna: Banyak mamalia besar (gajah, badak, harimau) dan berbagai jenis kera (orangutan).
                 </p>
             </div>
-            <div class="info-card" data-delay="0.4s">
+            <div class="info-card" data-delay="0.6s">
                 <h2>2. Wilayah Tengah (Peralihan)</h2>
                 <p style="font-size: 1.4rem;">
                     - Flora: Didominasi sabana/padang rumput, hutan musim, dan pohon berkayu keras (cendana, eboni).<br>
                     - Fauna: Didominasi hewan endemik asli Indonesia (komodo, anoa, babi rusa, burung maleo). 
                 </p>
             </div>
-            <div class="info-card" data-delay="0.4s">
+            <div class="info-card" data-delay="0.8s">
                 <h2>3. Wilayah Timur (Australis)</h2>
                 <p style="font-size: 1.4rem;">
                     - Flora: Banyak pohon sagu, hutan eukaliptus, matoa, dan tumbuhan jenis konifer.<<br>
@@ -472,14 +474,14 @@
         </div>
     </section>
 
-    <section class="slide" id="kesimpulan" style="text-align: center; align-items: center;">
+    <section class="slide" id="ThankYou" style="text-align: center; align-items: center;">
         <div style="background: var(--card-bg); padding: 1.5rem 3rem; border-radius: 50px; border: 1px solid var(--accent);">
             <h3 style="color: var(--accent);">Sekian & Terima Kasih!</h3>
             <p style="font-size: 0.9rem; color: var(--text-dim);">Ada Pertanyaan?</p>
         </div>
     </section>
 
-    <div style="display: flex; flex-direction: column; position: relative; background: #005caac2; padding: 1.5rem 1.5rem;">
+    <div id='credits' style="display: flex; flex-direction: column; position: relative; background: #005caac2; padding: 1.5rem 1.5rem;">
         <img src="Image/myPersonalLogo.png" alt="Logo" style="width: 80px;">
         <p style="color: #ffffff">&copy LucidSc1pt or Aditya Fathan • 2026</p>
         <a href="https://github.com/LucidSc1pt" target="_blank" style="color: #ffffff">LucidSc1pt Github Pages</a>
